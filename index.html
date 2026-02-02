@@ -4,19 +4,26 @@
     <title>CSS Variables</title>
     <style>
         :root {
-            
-        }
-        
-        .narrow-text {
-            width: 150px;
-            border-style: solid;
-            padding: 10px;
+            --wide-text-size: 200px;
+            --narrow-text-size: 150px;
+            --text-padding: 10px;
         }
 
-        .wide-text {
-            width: 200px;
-            border-style: solid;
-            padding: 10px;
+        @media (max-width: 150px) {
+            :root{
+                --wide-text-size: 180px;
+                }
+            }
+        
+        .narrow-text {
+            --narrow-text-size: 120px;
+            font-size: var(--narrow-text-size);
+            padding: var(--text-padding);
+        }
+
+        .text-container {
+            font-size: var(--wide-text-size);
+            padding: var(--text-padding);
         }
     </style>
 </head>
